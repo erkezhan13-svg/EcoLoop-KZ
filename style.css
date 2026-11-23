@@ -1,0 +1,95 @@
+/* 1. ЦВЕТА из Figma. Меняешь здесь, и меняется на всём сайте */
+:root {
+  --green: #5D8943;
+  --dark: #425239;
+  --light: #ABD194;
+  --bg: #F5F0E1;
+  --text: #383737;
+}
+
+/* 2. Общие настройки страницы */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img { max-width: 100%; }
+
+/* 3. ШАПКА: Flexbox ставит логотип и меню в одну строку */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background: white;
+}
+
+.logo { height: 48px; }
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* 4. СЕКЦИИ: отступы и заголовки */
+section { padding: 48px 32px; }
+
+h1 { font-size: 48px; margin: 0 0 16px; }
+h2 { color: var(--dark); }
+
+.hero { text-align: center; }
+
+/* 5. КНОПКА */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--green);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 6. КАРТОЧКИ: Grid делает 3 колонки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+/* 7. ФОРМА: поля друг под другом */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+input, textarea { padding: 10px; font-size: 16px; }
+
+/* 8. ПОДВАЛ */
+footer {
+  padding: 24px;
+  text-align: center;
+  background: var(--dark);
+  color: white;
+}
+
+/* 9. АДАПТИВНОСТЬ: на экране уже 700px карточки встают в одну колонку */
+@media (max-width: 700px) {
+  header { flex-direction: column; gap: 8px; }
+  .cards { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+}
